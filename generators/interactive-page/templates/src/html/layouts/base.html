@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+		<script type='text/javascript'>var _sf_startpt=(new Date()).getTime()</script>
+
+		{% block title %}
+			<title>{{ title }} | Sun Sentinel</title>
+		{% endblock %}
+
+		{% block facebook %}
+		<meta property="og:title" content="{{ social_title }}">
+		<meta property="og:type" content="article" />
+		<meta property="og:url" content="{{ social_url }}">
+		<meta property="og:image" content="{{ social_image_url }}">
+		<meta property="og:site_name" content="www.sun-sentinel.com"/>
+		<meta property="og:description" content="{{ fb_description }}">
+		<meta property="fb:app_id" content="179054228963818">
+		{% endblock %}
+
+		{% block twitter %}
+		<meta property="twitter:site" content="@SunSentinel" />
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta name="twitter:url" content="{{ social_url }}">
+		<meta name="twitter:title" content="{{ social_title }}">
+		<meta name="twitter:description" content="{{ twitter_description }}">
+		<meta name="twitter:image" content="{{ social_image_url }}">
+		{% endblock %}
+
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		{% block meta_description %}
+		<meta name="description" content="{{ description }}">
+		{% endblock %}
+
+
+		{% block stylesheet %}
+		<link rel="icon" type="image/ico" href="favicon.ico">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro|Source+Serif+Pro" rel="stylesheet">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+		<link rel="stylesheet" href="stylesheets/app.css">
+		{% endblock %}
+
+		<script type="application/ld+json">
+			{
+			"@context": "http://schema.org",
+			"@type": "NewsArticle",
+			"headline": "{{ social_title }}",
+			"url": "{{ social_url }}",
+			"thumbnailUrl": "{{ social_image_url }}",
+			"dateCreated": "PUBLISH DATE TYYYY-MM-DDZ00:00:00",
+			"articleSection": "{{ omniture_section }}",
+			"creator": ["AUTHOR1", "AUTHOR22"],
+			"keywords": ["KEYWORDS", "GO", "HERE"]
+			}
+		</script>
+
+		{% block omniture %}
+		<script>
+			((((window.trb || (window.trb = {})).data || (trb.data = {})).metrics || (trb.data.metrics = {})).thirdparty = {
+				pageName: 'sfss:interactive:{{ omniture_section }}:{{ omniture_project }}:sfss:interactive:dataproject.',
+				channel: '{{ omniture_section }}',
+				server: 'projects.sun-sentinel.com',
+				hier1: 'sun-sentinel:{{ omniture_section }}',
+				hier2: '{{ omniture_section }}',
+				prop1: 'D=pageName',
+				prop2: '{{ omniture_section }}',
+				prop38: 'dataproject',
+				prop57: 'D=c38',
+				eVar20: 'sun-sentinel',
+				eVar21: 'D=c38',
+				eVar34: 'D=ch',
+				eVar35: 'D=pageName',
+				events:''
+			});
+		</script>
+		{% endblock omniture %}
+
+	</head>
+
+	<body data-ad-path="/4011/trb.sunsentinel/{% if ad_path %}{{ ad_path}}{% else %}news{% endif %}" data-ad-ptype="sf" data-ad-iframe-url="ad-iframe.html">
+		<div id="fb-root"></div>
+
+		<script src="//www.sun-sentinel.com/thirdpartyservice?disablenav=true"></script>
+
+		{% block content %}
+		{% endblock %}
+	</body>
+
+	{% block javascript %}
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+		<script type="text/javascript" src="//cdn.gigya.com/js/gigya.js?apiKey=2_UtI1tkvSb0o7fJvh22ub59QFt86uh2nTUw_6vZ9Az-gwt9GERmEMJyT0ROaXY9GK"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		<!--<script src="https://pym.nprapps.org/pym.v1.min.js"></script>-->
+	  <script src="javascripts/app.js"></script>
+	{% endblock javascript %}
+
+	{% block script %}
+	{% endblock %}
+
+
+	<!-- {% if not DEBUG %} -->
+		<script src="http://s3.amazonaws.com/media.apps.chicagotribune.com/ads/v2.1.4/ads.min.js"></script>
+	<!-- {% endif %} -->
+
+	{% block ads %}
+	<script type='text/javascript'>
+		var gptadslots=[];
+		var googletag = googletag || {};
+		googletag.cmd = googletag.cmd || [];
+
+		(function(){
+			var gads = document.createElement('script');
+			gads.async = true;
+			gads.type = 'text/javascript';
+			var useSSL = 'https:' == document.location.protocol;
+			gads.src = (useSSL ? 'https:' : 'http:') +
+				'//www.googletagservices.com/tag/js/gpt.js';
+			var node = document.getElementsByTagName('script')[0];
+			node.parentNode.insertBefore(gads, node);
+		})();
+
+		googletag.cmd.push(function() {
+			//Adslot oop declaration
+			gptadslots[0] = googletag.defineOutOfPageSlot(
+				'/4011/trb.sunsentinel/{% if ad_path %}{{ ad_path }}{% else %}news{% endif %}',
+				'div-gpt-ad-863751094819497224-1').addService(googletag.pubads());
+			googletag.pubads().setTargeting('ptype',['sf']);
+			googletag.pubads().enableAsyncRendering();
+			googletag.enableServices();
+		});
+	</script>
+	{% endblock ads %}
+
+	{% block chartbeat %}
+	<script type='text/javascript'>
+		var _sf_async_config={};
+		/** CONFIGURATION START **/
+		_sf_async_config.useCanonical = true;
+		_sf_async_config.uid = 45523;
+		_sf_async_config.domain = 'sun-sentinel.com';
+		_sf_async_config.sections = '';
+		_sf_async_config.authors = '';
+		/** CONFIGURATION END **/
+		(function(){
+			function loadChartbeat() {
+				window._sf_endpt=(new Date()).getTime();
+				var e = document.createElement('script');
+				e.setAttribute('language', 'javascript');
+				e.setAttribute('type', 'text/javascript');
+				e.setAttribute('src', '//static.chartbeat.com/js/chartbeat.js');
+				document.body.appendChild(e);
+		}
+		var oldonload = window.onload;
+		window.onload = (typeof window.onload != 'function') ?
+			loadChartbeat : function() { oldonload(); loadChartbeat(); };
+		})();
+	</script>
+	{% endblock chartbeat %}
+</html>

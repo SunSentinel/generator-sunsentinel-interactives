@@ -1,0 +1,31 @@
+@media print {
+	article.project .container {
+		width: 100%;
+
+		h1, h2, h3, h4, h5, h6, p {
+			color: #000;
+		}
+	}
+
+	#topper {
+		h1, h2, p {
+			color: #000;
+		}
+	}
+
+	.advert,
+	.brightcove-embed,
+	.credits,
+	.fb_comments,
+	.nav-holder,
+	.related,
+	.shareline,
+	.pull-quote,
+	footer {
+		display: none;
+	}
+
+	a[href]:after {
+		content: "";
+	}
+}

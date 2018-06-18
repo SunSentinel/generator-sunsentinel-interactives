@@ -1,0 +1,128 @@
+{#
+  Nunjucks Templating!
+  Homepage: https://mozilla.github.io/nunjucks/
+  Docs: https://mozilla.github.io/nunjucks/api.html
+#}
+
+{% extends 'layouts/base.html' %}
+
+
+{% block content %}
+{% include 'layouts/hidden_third_party_nav.html' %}
+
+<div id="container">
+{% include 'layouts/feature_topper.html' %}
+
+<article class="project">
+<div class="container">
+  <p><span class="dropcap">L</span>orem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempor, nunc quis consectetur vestibulum, nulla augue ornare orci, ut dapibus erat nibh eget dolor. Fusce ex eros, condimentum vitae odio non, dictum semper tellus. Donec viverra, ipsum eget dignissim euismod, nulla orci lacinia felis, eu sollicitudin tortor ante ac lorem. Vivamus purus dui, tincidunt sed consectetur in, mollis ac nulla. Suspendisse ipsum libero, auctor ut enim eu, eleifend placerat purus. Donec eget congue mi. Donec justo sapien, commodo finibus nisl ac, viverra cursus libero. Proin semper vel tortor id facilisis. Sed malesuada ultricies imperdiet. Integer ultricies a mi sed egestas. Maecenas consectetur tincidunt magna, eu aliquet arcu. Donec in augue et ante interdum pharetra eget vel purus. Nulla iaculis faucibus velit, at vestibulum orci. Maecenas rutrum at lectus ac euismod. Aenean augue ex, eleifend et faucibus nec, venenatis sed purus. Donec pretium consequat est, non finibus magna commodo sed.</p>
+
+  {% import "partials/video_brightcove.html" as block %}
+  {{ block.input('96288623') }}
+
+  <p>Aliquam pharetra efficitur magna. Proin eleifend viverra elit, eu vestibulum leo ultricies sit amet. In quis eleifend ipsum. In vitae erat quam. Mauris vel mauris diam. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras cursus felis non est hendrerit lacinia. Ut sed libero aliquam, vulputate risus ut, volutpat odio. Vivamus lobortis lacus id congue lacinia. Aliquam erat volutpat. Suspendisse id sem quis diam blandit sollicitudin. Morbi tempus lectus sit amet condimentum porttitor. Nam aliquet, est vitae elementum pellentesque, velit libero posuere tellus, quis volutpat est tellus quis justo. Suspendisse ornare malesuada magna, ut efficitur augue euismod et. Aenean commodo mi dignissim elit tempor, non gravida lectus dictum.</p>
+
+  <p>Suspendisse potenti. Phasellus elementum leo scelerisque diam aliquam, quis sodales diam laoreet. Vivamus euismod orci nec dui dapibus maximus. Quisque blandit ornare orci, nec porta nibh lobortis nec. Mauris vel massa vulputate, consectetur magna et, pellentesque orci. Fusce iaculis magna at magna blandit, vel venenatis leo fringilla. Pellentesque quis neque ut mi finibus molestie. Phasellus condimentum odio id lorem fermentum eleifend. Curabitur convallis eu tortor a commodo.</p>
+
+  {% import "partials/image_inline.html" as block %}
+  {{ block.input('images/placeholder.jpg', 'Suspendisse potenti. Phasellus elementum leo. (Name Here/Sun Sentinel)') }}
+
+  <p>Nulla ultricies feugiat diam a tempus. Cras volutpat nisl urna. Vestibulum elementum nunc eu massa facilisis imperdiet. Curabitur lorem odio, laoreet eu vulputate id, viverra at enim. Mauris pretium scelerisque nisl ut ullamcorper. Fusce tempus erat eu felis fermentum, eget volutpat nunc fermentum. Sed non viverra lorem. In tincidunt nibh tortor, a pharetra augue dapibus sed. Morbi vel ante sed nisl efficitur porttitor non id neque. Donec tempor accumsan eros eget porta. Nunc vulputate, tortor a dapibus efficitur, lacus quam fringilla ante, ac dignissim metus mi nec mauris. Aliquam non ligula lacus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vivamus arcu libero, tempor non diam at, luctus euismod risus.</p>
+
+  <p>Vestibulum tincidunt, ante sit amet scelerisque blandit, ex risus efficitur enim, eu laoreet eros felis sed tortor. Curabitur lacus justo, lacinia at purus in, egestas maximus lorem. Proin neque eros, accumsan eu felis ac, sagittis convallis ipsum. Maecenas et ultricies augue, nec maximus mi. Phasellus lobortis turpis justo, id convallis massa elementum id. Maecenas tempus ac augue at suscipit. Duis venenatis maximus mi, in dictum enim tempor nec.</p>
+
+<hr class="section__line">
+
+<h3>Subhead One</h3>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempor, nunc quis consectetur vestibulum, nulla augue ornare orci, ut dapibus erat nibh eget dolor. Fusce ex eros, condimentum vitae odio non, dictum semper tellus. Donec viverra, ipsum eget dignissim euismod, nulla orci lacinia felis, eu sollicitudin tortor ante ac lorem. Vivamus purus dui, tincidunt sed consectetur in, mollis ac nulla. Suspendisse ipsum libero, auctor ut enim eu, eleifend placerat purus. Donec eget congue mi. Donec justo sapien, commodo finibus nisl ac, viverra cursus libero. Proin semper vel tortor id facilisis. Sed malesuada ultricies imperdiet. Integer ultricies a mi sed egestas. Maecenas consectetur tincidunt magna, eu aliquet arcu. Donec in augue et ante interdum pharetra eget vel purus. Nulla iaculis faucibus velit, at vestibulum orci. Maecenas rutrum at lectus ac euismod. Aenean augue ex, eleifend et faucibus nec, venenatis sed purus. Donec pretium consequat est, non finibus magna commodo sed.</p>
+
+<p>Aliquam pharetra efficitur magna. Proin eleifend viverra elit, eu vestibulum leo ultricies sit amet. In quis eleifend ipsum. In vitae erat quam. Mauris vel mauris diam. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras cursus felis non est hendrerit lacinia. Ut sed libero aliquam, vulputate risus ut, volutpat odio. Vivamus lobortis lacus id congue lacinia. Aliquam erat volutpat. Suspendisse id sem quis diam blandit sollicitudin. Morbi tempus lectus sit amet condimentum porttitor. Nam aliquet, est vitae elementum pellentesque, velit libero posuere tellus, quis volutpat est tellus quis justo. Suspendisse ornare malesuada magna, ut efficitur augue euismod et. Aenean commodo mi dignissim elit tempor, non gravida lectus dictum.</p>
+
+{% import 'partials/image_parallax.html' as block %}
+{{ block.input(
+'images/bg.jpg',
+'images/bg.jpg',
+'Suspendisse potenti. Phasellus elementum leo. (Name Here/Sun Sentinel)'
+)}}
+
+<h3>Subhead Two</h3>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempor, nunc quis consectetur vestibulum, nulla augue ornare orci, ut dapibus erat nibh eget dolor. Fusce ex eros, condimentum vitae odio non, dictum semper tellus. Donec viverra, ipsum eget dignissim euismod, nulla orci lacinia felis, eu sollicitudin tortor ante ac lorem. Vivamus purus dui, tincidunt sed consectetur in, mollis ac nulla. Suspendisse ipsum libero, auctor ut enim eu, eleifend placerat purus. Donec eget congue mi. Donec justo sapien, commodo finibus nisl ac, viverra cursus libero. Proin semper vel tortor id facilisis. Sed malesuada ultricies imperdiet. Integer ultricies a mi sed egestas. Maecenas consectetur tincidunt magna, eu aliquet arcu. Donec in augue et ante interdum pharetra eget vel purus. Nulla iaculis faucibus velit, at vestibulum orci. Maecenas rutrum at lectus ac euismod. Aenean augue ex, eleifend et faucibus nec, venenatis sed purus. Donec pretium consequat est, non finibus magna commodo sed.</p>
+
+{% include 'partials/slider.html' %}
+
+<p>Aliquam pharetra efficitur magna. Proin eleifend viverra elit, eu vestibulum leo ultricies sit amet. In quis eleifend ipsum. In vitae erat quam. Mauris vel mauris diam. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras cursus felis non est hendrerit lacinia. Ut sed libero aliquam, vulputate risus ut, volutpat odio. Vivamus lobortis lacus id congue lacinia. Aliquam erat volutpat. Suspendisse id sem quis diam blandit sollicitudin. Morbi tempus lectus sit amet condimentum porttitor. Nam aliquet, est vitae elementum pellentesque, velit libero posuere tellus, quis volutpat est tellus quis justo. Suspendisse ornare malesuada magna, ut efficitur augue euismod et. Aenean commodo mi dignissim elit tempor, non gravida lectus dictum.</p>
+
+{% import 'partials/pull_quote.html' as block %}
+{{ block.input(
+  'Laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum!',
+  'Speaker'
+)}}
+
+<p>Suspendisse potenti. Phasellus elementum leo scelerisque diam aliquam, quis sodales diam laoreet. Vivamus euismod orci nec dui dapibus maximus. Quisque blandit ornare orci, nec porta nibh lobortis nec. Mauris vel massa vulputate, consectetur magna et, pellentesque orci. Fusce iaculis magna at magna blandit, vel venenatis leo fringilla. Pellentesque quis neque ut mi finibus molestie. Phasellus condimentum odio id lorem fermentum eleifend. Curabitur convallis eu tortor a commodo.</p>
+
+<p>Nulla ultricies feugiat diam a tempus. Cras volutpat nisl urna. Vestibulum elementum nunc eu massa facilisis imperdiet. Curabitur lorem odio, laoreet eu vulputate id, viverra at enim. Mauris pretium scelerisque nisl ut ullamcorper. Fusce tempus erat eu felis fermentum, eget volutpat nunc fermentum. Sed non viverra lorem. In tincidunt nibh tortor, a pharetra augue dapibus sed. Morbi vel ante sed nisl efficitur porttitor non id neque. Donec tempor accumsan eros eget porta. Nunc vulputate, tortor a dapibus efficitur, lacus quam fringilla ante, ac dignissim metus mi nec mauris. Aliquam non ligula lacus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vivamus arcu libero, tempor non diam at, luctus euismod risus.</p>
+
+<p>Vestibulum tincidunt, ante sit amet scelerisque blandit, ex risus efficitur enim, eu laoreet eros felis sed tortor. Curabitur lacus justo, lacinia at purus in, egestas maximus lorem. Proin neque eros, accumsan eu felis ac, sagittis convallis ipsum. Maecenas et ultricies augue, nec maximus mi. Phasellus lobortis turpis justo, id convallis massa elementum id. Maecenas tempus ac augue at suscipit. Duis venenatis maximus mi, in dictum enim tempor nec.</p>
+
+{% import 'partials/video_thumb.html' as block %}
+{{ block.input(
+  'http://www.sunsentinel.com/',
+  'images/header.jpg'
+)}}
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempor, nunc quis consectetur vestibulum, nulla augue ornare orci, ut dapibus erat nibh eget dolor. Fusce ex eros, condimentum vitae odio non, dictum semper tellus. Donec viverra, ipsum eget dignissim euismod, nulla orci lacinia felis, eu sollicitudin tortor ante ac lorem. Vivamus purus dui, tincidunt sed consectetur in, mollis ac nulla. Suspendisse ipsum libero, auctor ut enim eu, eleifend placerat purus. Donec eget congue mi. Donec justo sapien, commodo finibus nisl ac, viverra cursus libero. Proin semper vel tortor id facilisis. Sed malesuada ultricies imperdiet. Integer ultricies a mi sed egestas. Maecenas consectetur tincidunt magna, eu aliquet arcu. Donec in augue et ante interdum pharetra eget vel purus. Nulla iaculis faucibus velit, at vestibulum orci. Maecenas rutrum at lectus ac euismod. Aenean augue ex, eleifend et faucibus nec, venenatis sed purus. Donec pretium consequat est, non finibus magna commodo sed.</p>
+
+<p>Aliquam pharetra efficitur magna. Proin eleifend viverra elit, eu vestibulum leo ultricies sit amet. In quis eleifend ipsum. In vitae erat quam. Mauris vel mauris diam. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras cursus felis non est hendrerit lacinia. Ut sed libero aliquam, vulputate risus ut, volutpat odio. Vivamus lobortis lacus id congue lacinia. Aliquam erat volutpat. Suspendisse id sem quis diam blandit sollicitudin. Morbi tempus lectus sit amet condimentum porttitor. Nam aliquet, est vitae elementum pellentesque, velit libero posuere tellus, quis volutpat est tellus quis justo. Suspendisse ornare malesuada magna, ut efficitur augue euismod et. Aenean commodo mi dignissim elit tempor, non gravida lectus dictum.</p>
+
+<p>Suspendisse potenti. Phasellus elementum leo scelerisque diam aliquam, quis sodales diam laoreet. Vivamus euismod orci nec dui dapibus maximus. Quisque blandit ornare orci, nec porta nibh lobortis nec. Mauris vel massa vulputate, consectetur magna et, pellentesque orci. Fusce iaculis magna at magna blandit, vel venenatis leo fringilla. Pellentesque quis neque ut mi finibus molestie. Phasellus condimentum odio id lorem fermentum eleifend. Curabitur convallis eu tortor a commodo.</p>
+
+<p>Nulla ultricies feugiat diam a tempus. Cras volutpat nisl urna. Vestibulum elementum nunc eu massa facilisis imperdiet. Curabitur lorem odio, laoreet eu vulputate id, viverra at enim. Mauris pretium scelerisque nisl ut ullamcorper. Fusce tempus erat eu felis fermentum, eget volutpat nunc fermentum. Sed non viverra lorem. In tincidunt nibh tortor, a pharetra augue dapibus sed. Morbi vel ante sed nisl efficitur porttitor non id neque. Donec tempor accumsan eros eget porta. Nunc vulputate, tortor a dapibus efficitur, lacus quam fringilla ante, ac dignissim metus mi nec mauris. Aliquam non ligula lacus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vivamus arcu libero, tempor non diam at, luctus euismod risus.</p>
+
+<p>Vestibulum tincidunt, ante sit amet scelerisque blandit, ex risus efficitur enim, eu laoreet eros felis sed tortor. Curabitur lacus justo, lacinia at purus in, egestas maximus lorem. Proin neque eros, accumsan eu felis ac, sagittis convallis ipsum. Maecenas et ultricies augue, nec maximus mi. Phasellus lobortis turpis justo, id convallis massa elementum id. Maecenas tempus ac augue at suscipit. Duis venenatis maximus mi, in dictum enim tempor nec.</p>
+
+   <section class="credits clearfix">
+     <p>
+       <span class="bold">Reporter</span>:
+       <a href="#" target="_blank">Name Here</a>
+     </p>
+     <p>
+       <span class="bold">Photos</span>:
+       <a href="#" target="_blank">Name Here</a>
+     </p>
+     <p>
+       <span class="bold">Design & Development</span>:
+       <a href="#" target="_blank">Name Here</a>,
+       <a href="#" target="_blank">Name Here</a>
+     </p>
+   </section>
+
+</div>
+
+<div class="related clearfix">
+  <h5>More from the Sun Sentinel</h5>
+  <a class="clearfix" href="#">
+      <img src="images/placeholder.jpg">
+      <h6>Headline</h6>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempor, nunc quis consectetur vestibulum.</p>
+    </a>
+  <a class="clearfix" href="#">
+      <img src="images/placeholder.jpg">
+      <h6>Headline</h6>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempor, nunc quis consectetur vestibulum.</p>
+    </a>
+  <a class="clearfix" href="#">
+      <img src="images/placeholder.jpg">
+      <h6>Headline</h6>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempor, nunc quis consectetur vestibulum.</p>
+   </a>
+</div>
+
+
+{% include 'layouts/footer.html' %}
+
+</article>
+</div>
+
+{% endblock %}

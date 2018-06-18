@@ -1,0 +1,9 @@
+{
+  "generator-node": {
+    "promptValues": {
+      "authorUrl": "www.github.com/SunSentinel",
+      "authorName": "Aric Chokey",
+      "authorEmail": "achokey@sun-sentinel.com"
+    }
+  }
+}

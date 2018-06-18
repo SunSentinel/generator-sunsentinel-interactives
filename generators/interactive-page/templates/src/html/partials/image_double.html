@@ -1,0 +1,18 @@
+{% macro input(img1, img2, caption) %}
+
+<figure class="imageBlock wideBlock doubleBlock">
+	<img
+		class="js-lazy"
+		src="images/lazy-placeholder.jpg"
+		data-src="{{ img1 }}"
+	>
+
+	<img
+		class="js-lazy"
+		src="images/lazy-placeholder.jpg"
+		data-src="{{ img2 }}"
+	>
+	<figcaption class="caption">{{ caption }}</figcaption>
+</figure>
+
+{% endmacro %}

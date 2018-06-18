@@ -1,0 +1,21 @@
+# Dev dependencies #
+######################
+node_modules
+
+# Log files #
+######################
+logs
+*.log
+npm-debug.log*
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Created using https://www.gitignore.io

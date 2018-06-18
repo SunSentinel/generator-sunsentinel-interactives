@@ -1,0 +1,8 @@
+{% macro input(img, caption) %}
+
+<figure class="leftBlock imageBlock sideBlock">
+	<img class="js-lazy" src="images/lazy-placeholder.jpg" data-src="{{ img }}">
+	<figcaption class="caption">{{ caption }}</figcaption>
+</figure>
+
+{% endmacro %}

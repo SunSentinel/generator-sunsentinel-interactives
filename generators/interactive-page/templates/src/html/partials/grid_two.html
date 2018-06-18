@@ -1,0 +1,24 @@
+{% macro input(title, img1, caption1, img2, caption2)%}
+
+<aside class="twoStack gridWell clearfix">
+	<h5>{{ title }}</h5>
+	<figure class="gridLayout">
+		<img
+			class="js-lazy"
+			src="images/lazy-placeholder.jpg"
+			data-src="{{ img1 }}"
+		>
+		<figcaption class="caption">{{ caption1 }}</figcaption>
+	</figure>
+
+	<figure class="gridLayout">
+		<img
+			class="js-lazy"
+			src="images/lazy-placeholder.jpg"
+			data-src="{{ img2 }}"
+		>
+		<figcaption class="caption">{{ caption2 }}</figcaption>
+	</figure>
+</aside>
+
+{% endmacro %}

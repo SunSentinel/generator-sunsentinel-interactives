@@ -1,0 +1,53 @@
+{
+  "title": "Title goes here | Sun Sentinel",
+  "headline": "Headline goes here",
+  "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+
+  "social_title": "This is your title",
+  "social_url": "http://projects.sun-sentinel.com/projectname",
+  "social_image_url": "http://projects.sun-sentinel.com/projectname/images/fb.jpg",
+  "fb_description": "This is a Facebook description. This is a Facebook description. This is a Facebook description.",
+  "twitter_description": "This is a Twitter description. This is a Twitter description. This is a Twitter description.",
+
+  "omniture_section": "news",
+  "omniture_project": "projectname",
+  "ad_path": "news",
+
+  "series_name": "Series Name",
+  "link_1": "#",
+  "subitem_1": "First Story",
+  "link_2": "#",
+  "subitem_2": "Second Story",
+  "link_3": "#",
+  "subitem_3": "Third Story",
+   "link_4": "#",
+  "subitem_4": "A long story name",
+
+  "absolute_url": "projects.sun-sentinel.com/test",
+
+  "topper_img": "images/header.jpg",
+  "intro_text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+
+  "reporters": [{
+      "name": "Name Here",
+      "url": "#",
+      "operator": "and "
+    },
+    {
+      "name": "Name Here",
+      "url": "#",
+      "operator": ""
+    }
+  ],
+  "pub_date": "Jan. 1, 1910",
+
+  "photos": [{
+      "src": "images/header.jpg",
+      "caption": "Swiper Slide 1"
+    },
+    {
+      "src": "images/placeholder.jpg",
+      "caption": "Swiper Slide 2"
+    }
+  ]
+}

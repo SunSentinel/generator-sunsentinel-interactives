@@ -1,0 +1,299 @@
+@import 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.2.0/leaflet.css';
+//==========================
+//OVERWRITE
+//==========================
+
+.leaflet-top .leaflet-control{
+	top:60px;
+	@include custom{
+		display:none;
+	}
+}
+
+.z-depth-5{
+	box-shadow: 0 24px 38px 3px rgba(0,0,0,0.14), 0 9px 46px 8px rgba(0,0,0,0.12), 0 11px 15px -7px rgba(0,0,0,0.2)
+}
+//==========================
+//CUSTOM DESIGN
+//==========================
+
+.project{
+   width:100%;
+   height:100%;
+}
+
+#map{
+	width:100%;
+	height:100%;
+	position:absolute;
+	overflow:hidden;
+	top:0;
+@include custom{
+	position:absolute !important;
+	min-height:600px;
+	top:0;
+	bottom:0;
+}
+}
+
+.legend{
+	position:absolute;
+	bottom:18px;
+	right:0;
+  z-index:1000;
+  font-family:$heading-sans-serif;
+	font-size:0.8em;
+	padding:10px;
+	background-color:rgba(255,255,255,0.7);
+	@include custom{
+    bottom:7%;
+		font-size:0.7em;
+	}
+	@include mobile{
+		width:100%;
+		bottom:8%;
+	}
+
+	p{
+		font-family:$heading-sans-serif !important;
+		text-transform:uppercase;
+		font-weight:600;
+		margin-bottom:8px;
+	}
+	ul{
+		display:flex;
+		flex-diretion:row;
+		text-align:center;
+    margin:10px auto;
+		@media screen and (max-width:320px){
+			margin:5px auto;
+		}
+    li{
+			margin-right:8px;
+		}
+		.box{
+			display:inline-block;
+			width:12px;
+			height:12px;
+			border-radius:50%;
+			border:1px solid $charcoal;
+			background-color:$gray;
+		}
+		.scale{
+			display:inline-block;
+			padding-top:5px;
+		}
+	}
+}
+
+
+.aside{
+	position:absolute;
+	top:0;
+	left:0;
+	width:360px;
+	height:100%;
+	z-index:999;
+	background-color:rgba(255,255,255,1);
+	padding:12px;
+  overflow-y:scroll;
+
+	@include custom{
+		top:0;
+		width:100%;
+		height:auto;
+		z-index:1000;
+		overflow-y:auto;
+	}
+
+.main-intro{
+		margin-top:60px;
+		padding-left:1%;
+		padding-right:1%;
+		@include custom{
+			margin-top:45px;
+		}
+		@include mobile{
+			margin-top:55px;
+		}
+	}
+
+	h1{
+       font-size:2.3em;
+       font-family:$heading-serif;
+       font-weight:600;
+       line-height:1.2em;
+			 margin:0 auto;
+			 @include custom{
+				 font-size:1.8em;
+				 line-height:1.3em;
+			 }
+			 @include mobile{
+				 font-size:1.3em;
+				 margin:15px auto 10px;
+			 }
+			 @media screen and (max-width:320px){
+				 font-size:1.2em;
+				 margin:10px auto;
+			 }
+	}
+	p{
+       font-family: $body-serif;
+       font-size: 16px;
+       line-height: 1.5em;
+       margin: 0.5rem auto;
+       max-width: 600px;
+			 @include mobile{
+				 font-size:14px;
+			 }
+
+			 @media screen and (max-width:320px){
+				 font-size:13px;
+			 }
+
+	}
+	.byline{
+		margin:10px auto;
+	}
+	.byline p{
+     font-family:$heading-sans-serif;
+     color:$gray;
+     font-style:italic;
+     font-size:16px;
+		 @include custom{
+			 font-size:14px;
+		 }
+	}
+
+}
+
+
+.bold{
+    font-weight:600;
+}
+
+.footnote{
+    p{
+        font-size:0.9em;
+        font-family:$heading-sans-serif;
+        margin:5px auto;
+    }
+}
+
+.desktop-aside{
+	@include custom{
+	  position:absolute;
+		bottom:auto;
+		top:92%;
+		width:100%;
+		height:auto;
+		z-index:1000;
+		overflow-y:auto;
+	}
+	@include mobile{
+		top:90%;
+	}
+}
+
+.mobile-aside{
+	display:none;
+	@include custom{
+		display:block;
+		position:absolute;
+		top:0;
+		z-index:1000;
+		text-align:center;
+
+	}
+}
+
+.hide-option{
+	display:none;
+	@include custom{
+		display:block;
+
+		span{
+			font-family:$heading-sans-serif;
+			font-size:0.8em;
+			color:$ss-maroon;
+			cursor:pointer;
+		}
+	}
+}
+
+ .info-panel{
+    max-width:350px;
+    width:100%;
+    margin:10px auto;
+    padding:10px;
+		@include custom{
+			max-width:350px;
+			padding:0 10px;
+		}
+    h2{
+        font-family:$heading-serif;
+        font-size:1.4em;
+        line-height:1.2em;
+        margin:10px auto 20px;
+        text-transform:capitalize;
+        font-weight:700;
+    }
+
+		.status{
+        display:inline-block;
+        padding:4px 8px;
+        border-radius:4px;
+        font-size:13px;
+				font-weight:normal;
+				line-height:1em;
+				vertical-align: middle;
+        font-family:$heading-sans-serif;
+				margin:2px;
+
+    }
+		.completed{
+			background-color:#238B45;
+			color:$white;
+		}
+		.construction{
+			background-color:#225EA8;
+			color:$white
+		}
+		.approved{
+			background-color:#54baed;
+	}
+	.review{
+		background-color:#c73c1f;
+		color:$white;
+	}
+
+    h3{
+        font-size:1em;
+        line-height:1.2em;
+        margin:10px auto;
+        font-family:$heading-sans-serif;
+        font-weight:700;
+    }
+
+    p{
+      font-size:1em;
+      line-height:1.2em;
+      font-family:$heading-serif;
+			margin:10px auto 20px;
+			&.source{
+				font-size:0.8em;
+			}
+    }
+
+   .image{
+		 max-width: 320px;
+		 img{
+			 width:100%;
+		 }
+		 p{
+			 font-family:$heading-sans-serif;
+			 font-size:14px;
+			 color:$gray;
+		 }
+	 }
+}

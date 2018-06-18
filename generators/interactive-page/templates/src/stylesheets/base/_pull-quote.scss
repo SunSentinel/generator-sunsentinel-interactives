@@ -1,0 +1,50 @@
+.pull-quote {
+  box-sizing: border-box;
+  float: none;
+  margin: 30px auto;
+  max-width: 400px;
+  padding: 0 15px;
+  position: relative;
+
+  &:before {
+    content: '\201C';
+    position: absolute;
+    top: -27px;
+    left: 10px;
+    font-size: 20em;
+    color: rgba(173, 0, 0, .2);
+    z-index: -1;
+
+    @include desktop {
+      top: -10px;
+    }
+  }
+  @include desktop {
+    width: 400px;
+    margin: 20px;
+    max-width: none;
+    float: right;
+    padding: 20px 40px 10px 20px;
+  }
+}
+
+.pull-quote__text {
+  color: $text;
+  font-family: $body-serif;
+  font-size: 3.2em;
+  line-height: 160%;
+
+  @include tablet {
+    font-size: 2.8em;
+  }
+
+  @include mobile {
+    font-size: 2.4em;
+  }
+}
+
+article.project .container .pull-quote__speaker {
+  color: $ss-maroon;
+  font-size: 1.2em;
+  line-height: 0;
+}

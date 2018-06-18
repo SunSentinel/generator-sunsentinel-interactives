@@ -1,0 +1,24 @@
+<div id="topper">
+	<ul class="shareline">
+		<li><i data-share="facebook"></i></li>
+		<li><i data-share="twitter"></i></li>
+		<li><i data-share="email"></i></li>
+	</ul>
+	<h1>{{ headline }}</h1>
+
+	<div class="topper--intro">
+		<h2>{{ intro_text }}</h2>
+
+		<div class="topper--byline">
+			<p>By
+			{% for person in reporters %}
+				<a href="{{ person.url }}">
+					{{ person.name }}
+				</a>
+				{{ person.operator }}
+			{% endfor %}
+			</p>
+			<p>{{ pub_date }}</p>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,35 @@
+### Sass ###
+.sass-cache/
+*.css.map
+**/generated/_icons.sass
+
+# Dev dependencies #
+######################
+node_modules
+bower_components
+
+# Build files #
+######################
+.publish
+public
+.awspublish-projects.sun-sentinel.com
+
+# Log files #
+######################
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Created by https://www.gitignore.io

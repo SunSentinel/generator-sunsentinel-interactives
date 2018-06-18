@@ -1,0 +1,25 @@
+.subscribeText {
+  background-color: #f4f4F4;
+  padding: 2em;
+  width: 80%;
+
+  @include tablet{
+    width:100%;
+  }
+}
+
+article.project .subscribeText p {
+  font-family:$heading-sans-serif;
+  font-size: .9rem;
+  line-height: 1.3rem;
+  margin: 0 auto;
+}
+
+article.project .subscribeText p:first-of-type {
+  font-size: 1.2rem;
+  font-style: italic;
+  line-height: 2rem;
+  font-weight: bold;
+}
+
+

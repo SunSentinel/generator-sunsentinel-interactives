@@ -1,0 +1,53 @@
+.parallax {
+  display: block;
+  font-size: 1em;
+
+  &--bg {
+    @extend .parallax;
+    margin: 30px auto;
+    @include desktop {
+      & .parallax__caption-and-file {
+        display: none;
+      }
+    }
+  }
+
+  .caption {
+    padding: 0 2rem;
+  }
+}
+
+.parallax__bg {
+  background-image: none;
+  display: none;
+  height: 0;
+  padding-bottom: 56.25%;
+  @include desktop {
+    background-attachment: fixed;
+    background-position: 50% 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: block;
+  }
+}
+
+.parallax__caption-and-file {
+  display: block;
+  margin: 0;
+}
+
+.parallax__ratio-box {
+  display: block;
+  height: 0;
+  position: relative;
+
+  &--16x9 {
+    @extend .parallax__ratio-box;
+    padding-bottom: 56.25%;
+  }
+}
+
+.parallax__file {
+  display: block;
+  width: 100%;
+}
