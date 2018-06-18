@@ -27,9 +27,19 @@ yo sunsentinel-interactives
 The generator will allow you to pick the type of interactive project you want to create and then generates the boilerplate files in your working directory.
 
 
+## Developing the generator
+To work on the generator, clone the repo and symlink to the package.
+ ```bash
+git clone git@github.com:SunSentinel/generator-sunsentinel-interactives.git
+cd generator-sunsentinel-interactives
+npm link
+```
+
+
 TO DO:
 + Add interactive embed generator
 + Add map embed generator
++ Publish to npm
 
 ## License
 

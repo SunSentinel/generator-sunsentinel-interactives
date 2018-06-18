@@ -38,7 +38,6 @@
     "lodash": "^4.17.10",
     "mkdirp": "^0.5.1",
     "octonode": "^0.9.2",
-    "string": "^3.3.3",
     "yeoman-generator": "^2.0.1",
     "yosay": "^2.0.1"
   },
