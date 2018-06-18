@@ -7,7 +7,6 @@ const fs = require('fs');
 const figlet = require('figlet');
 
 module.exports = class extends Generator {
-  // Main prompt
   prompting() {
     const done = this.async();
 

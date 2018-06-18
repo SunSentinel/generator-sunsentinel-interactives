@@ -2,11 +2,11 @@
   "name": "generator-sunsentinel-interactives",
   "version": "0.6.1",
   "description": "A Yeoman generator to create interactive news projects for the South Florida Sun Sentinel.",
-  "homepage": "",
+  "homepage": "http://www.github.com/SunSentinel",
   "author": {
     "name": "Aric Chokey",
     "email": "achokey@sun-sentinel.com",
-    "url": "www.github.com/SunSentinel"
+    "url": "http://www.github.com/SunSentinel"
   },
   "files": [
     "generators"

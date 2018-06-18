@@ -1,9 +1,10 @@
 const Generator = require('yeoman-generator');
 
 module.exports = class extends Generator {
-  //   Initializing() {
-  //     this.composeWith('sunsentinel-interactives:common');
-  //   }
+  Initializing() {
+    // Pull in Sun Sentinel styles
+    this.composeWith(require.resolve('../styles'));
+  }
 
   prompting() {
     const questions = [
