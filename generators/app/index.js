@@ -49,10 +49,6 @@ module.exports = class extends Generator {
           {
             name: 'Interactive embed',
             value: 'interactive-embed'
-          },
-          {
-            name: 'Map embed',
-            value: 'map-embed'
           }
         ]
       }

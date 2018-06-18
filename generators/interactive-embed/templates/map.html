@@ -1,0 +1,83 @@
+<head>
+
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+    <link rel="stylesheet" href="http://interactive.sun-sentinel.com/developers/leaflet/l.geosearch.css"/>
+    <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+    <script src="http://interactive.sun-sentinel.com/developers/leaflet/l.control.geosearch.js"></script>
+    <script src="http://interactive.sun-sentinel.com/developers/leaflet/l.geosearch.provider.google.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <link href="https://api.tiles.mapbox.com/mapbox-gl-js/v0.11.2/mapbox-gl.css" rel='stylesheet' />
+    <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v0.11.2/mapbox-gl.js"></script>
+    
+    </head>
+    
+    <style>
+    .bold {font-weight:700;}
+    #map{width:100%; height:800px;}
+    #map h3{font-size:1.5em;}
+    .leaflet-popup-content{width:auto !important;min-width:150px;}
+    .leaflet-container img{max-width:350px !important;}
+    .leaflet-popup-content p{margin:5px 0;font-size:1.2em;line-height:20px;}
+    </style>
+    
+    <p>Dozens of construction projects are in the pipeline in Dania Beach, Hallandale Beach and Hollywood. Click the dots to see more information.</p>
+    
+    <div id="map"></div>
+    <script src="http://interactive.sun-sentinel.com/senior-food-deserts/js/leaflet-mapbox-gl.js"></script>
+    
+    <script type="text/javascript">
+        if (!mapboxgl.supported()) {
+            var map = L.map('map', { zoomControl: true }).setView([26.015, -80.16], 13);
+            L.tileLayer('http://{s}.{base}.maps.api.here.com/maptile/2.1/' +
+                'maptile/{mapID}/{variant}/{z}/{x}/{y}/256/png8?' +
+                'app_id={app_id}&app_code={app_code}', {
+                    attribution: 'Map &copy; 1987-2014 <a href="http://developer.here.com">HERE</a>',
+                    subdomains: '1234',
+                    mapID: 'newest',
+                    'app_id': '3EqISN3usn9ZPjG1Ewcl',
+                    'app_code': '1fvzZx4VqUt3I98HFafEMw',
+                    base: 'base',
+                    variant: 'normal.day.transit',
+                    minZoom: 10,
+                    maxZoom: 16
+                }).addTo(map);
+        }
+        else {
+            var map = L.map('map').setView([26.015, -80.16], 13);
+            map.options.minZoom = 10;
+            map.options.maxZoom = 16;
+            var gl = L.mapboxGL({
+                accessToken: 'pk.eyJ1Ijoic3NkZXZlbG9wZXJzIiwiYSI6ImNpaHc2OXN3dDAyaHd1MW0xaDB2MTVuc3AifQ.1cG9uUa0Wcmm0bEbR2Jjiw',
+                style: 'mapbox://styles/ssdevelopers/cij4rhw8b00169hkl1iw97taw'
+            }).addTo(map);
+        }
+        function getURLParameter(name) {
+            return decodeURI((RegExp(name + '=' + '(.+?)(&|$)').exec(location.search) || [,])[1]);
+        }
+        var regionParameter = getURLParameter('region');
+        var region = (regionParameter === 'undefined') ? '' : regionParameter;
+        new L.Control.GeoSearch({
+            provider: new L.GeoSearch.Provider.Google({
+                region: region
+            })
+        }).addTo(map);
+        L.circleMarker([26.013164, -80.142300], { radius: 10, weight: 2, color: "#ffffff", fillColor: "#E03333", fillOpacity: 1 }).bindPopup("Tooltip text").addTo(map);
+        var polygon = L.polygon([
+            [26.048265, -80.161977], [26.048342, -80.155840], [26.055513, -80.156065], [26.055484, -80.162191]
+        ], { weight: 6, color: '#E03333' }).addTo(map);
+        polygon.bindPopup("Tooltip");
+
+        var style = {
+            "color": "#E03333",
+            "weight": 5,
+            "opacity": 1
+        };
+        var geoJsonLayer = L.geoJson(lines, {
+            style: style,
+            onEachFeature: function (feature, layer) {
+                layer.bindPopup("<span class='bold'>Details: </span>" + feature.properties.detail);
+            }
+        }).addTo(map);
+    </script>
+    
+      <p>SOURCE: MAP DATA SOURCE</p>
