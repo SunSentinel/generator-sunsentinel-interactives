@@ -1,7 +1,7 @@
 # generator-sunsentinel-interactives [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
 > A Yeoman generator to create interactive news projects for the South Florida Sun Sentinel. 
 
-The generator takes care of scaffoling projects, meaning it creates the boilerplate files and folders needed for the given project using our templates and styles. It is a starting point for creating both stand-alone presentations and  interactives that are embeddable in our CMS.
+The generator takes care of scaffolding projects, meaning it creates the boilerplate files and folders needed for the given project using our templates and styles. It is a starting point for creating both stand-alone presentations and  interactives that are embeddable in our CMS.
 
 ## Getting started
 
