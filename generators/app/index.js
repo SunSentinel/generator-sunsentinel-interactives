@@ -14,9 +14,7 @@ module.exports = class extends Generator {
     this.log(chalk.red(figlet.textSync('Sun Sentinel', { horizontalLayout: 'full' })));
     this.log(
       chalk.white(
-        ` Welcome to the ${chalk.white(
-          'South Florida Sun Sentinel interactives generator'
-        )}.\n\n`
+        ` Welcome to the South Florida Sun Sentinel interactives generator.\n\n`
       )
     );
 

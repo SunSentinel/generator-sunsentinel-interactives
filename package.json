@@ -1,6 +1,6 @@
 {
   "name": "generator-sunsentinel-interactives",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "A Yeoman generator to create interactive news projects for the South Florida Sun Sentinel.",
   "homepage": "",
   "author": {

@@ -43,7 +43,7 @@ TO DO:
 
 ## License
 
-MIT © [Aric Chokey](www.github.com/SunSentinel)
+MIT
 
 
 [npm-image]: https://badge.fury.io/js/generator-sunsentinel-interactives.svg
