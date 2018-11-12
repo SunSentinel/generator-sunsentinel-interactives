@@ -1,0 +1,824 @@
+<head>
+  <meta property="og:description" content="2015 school grades released." />
+  <!--Update this-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jq-3.3.1/dt-1.10.18/r-2.2.2/datatables.min.css" />
+  <script type="text/javascript" src="https://cdn.datatables.net/v/dt/jq-3.3.1/dt-1.10.18/r-2.2.2/datatables.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+</head>
+
+
+
+<style>
+  table.dataTable {
+    font-size: 0.8em;
+    font-family: Arial;
+    padding-top: 15px;
+  }
+
+  table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child:before,
+  table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>th:first-child:before {
+    top: auto;
+    border: 0;
+    box-shadow: none;
+    background-color: #005980;
+    line-height: auto;
+  }
+
+  table.dataTable.stripe tbody tr.odd,
+  table.dataTable.display tbody tr.odd {
+    background-color: #fff;
+  }
+
+  table.dataTable.hover tbody tr.even,
+  table.dataTable.display tbody tr.even {
+    background-color: #fff;
+  }
+
+  table.dataTable.hover tbody tr:hover,
+  table.dataTable.display tbody tr:hover {
+    background-color: #fff;
+  }
+
+  table.dataTable.display tbody tr.odd>.sorting_1,
+  table.dataTable.order-column.stripe tbody tr.odd>.sorting_1 {
+    background-color: #fff;
+  }
+
+  table.dataTable.display tbody tr.even>.sorting_1,
+  table.dataTable.order-column.stripe tbody tr.even>.sorting_1 {
+    background-color: #fff;
+  }
+
+  table.dataTable thead th {
+    color: #005980;
+    background-color: #f1f1f1;
+  }
+
+  .dataTables_wrapper .dataTables_paginate .paginate_button.current {
+    background: transparent;
+  }
+
+  .dataTables_wrapper .dataTables_paginate .paginate_button {
+    padding: 0.2em 0.5em;
+  }
+
+ .dataTables_wrapper .dataTables_length{
+     display:none;
+ }
+ .dataTables_wrapper .dataTables_filter{
+     float:none;
+     text-align:center;
+     font-size:14px;
+ }
+
+ .dataTables_wrapper .dataTables_paginate{
+    font-size:13px;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.dataTables_wrapper .dataTables_info{
+  font-size:13px;
+    font-family:Arial, Helvetica, sans-serif;
+    color:rgb(100, 100, 100);
+}
+
+table.dataTable a{
+    color:#4492e0;
+    text-decoration:none;
+}
+table.dataTable a:hover{ 
+    color:#9dd1f6;
+}
+
+table.dataTable a:visited{
+    color:#005980;
+}
+
+#button-holder {
+    text-align: center;
+    margin:20px auto;
+}
+
+#button-holder button{
+  outline:none;
+  font-size:14px;
+  background-color:#f1f1f1;
+  color:#333333;
+  transition:background-color 0.5s ease;
+}
+#button-holder button.active{
+  background-color:#005980;
+  color:#ffffff;
+}
+#button-holder button:hover{
+  cursor:pointer;
+  background-color:#005980;
+  color:#ffffff;
+}
+
+
+</style>
+
+<div id="button-holder">
+  <button type="button" class="btn active" data-value="broward">Broward County</button>
+  <button type="button" class="btn" data-value="palm">Palm Beach County</button>
+  <button type="button" class="btn" data-value="dade">Miami-Dade County</button>
+</div>
+
+<div id="broward" class="table-container">
+  <table id="broward-table" class="table display responsive" cellspacing="0" width="100%">
+    <thead>
+      <tr>
+        <th>School Name</th>
+        <th>Preliminary Informational Baseline Grade 2015</th>
+        <th>Percent of Total Possible Points</th>
+        <th>Percent of Economically Disadvantaged Students</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Deerfield Beach Elementary School</td>
+        <td>C</td>
+        <td>44</td>
+        <td>76</td>
+      </tr>
+      <tr>
+        <td>Pompano Beach Middle School</td>
+        <td>C</td>
+        <td>48</td>
+        <td>86</td>
+      </tr>
+      <tr>
+        <td>Oakland Park Elementary School</td>
+        <td>D</td>
+        <td>36</td>
+        <td>93</td>
+      </tr>
+      <tr>
+        <td>North Side Elementary School</td>
+        <td>F</td>
+        <td>30</td>
+        <td>97</td>
+      </tr>
+      <tr>
+        <td>Dania Elementary School</td>
+        <td>A</td>
+        <td>63</td>
+        <td>81</td>
+      </tr>
+      <tr>
+        <td>Hollywood Hills Elementary School</td>
+        <td>B</td>
+        <td>59</td>
+        <td>48</td>
+      </tr>
+      <tr>
+        <td>Hollywood Central Elementary School</td>
+        <td>C</td>
+        <td>50</td>
+        <td>74</td>
+      </tr>
+      <tr>
+        <td>Hallandale Elementary School</td>
+        <td>C</td>
+        <td>44</td>
+        <td>91</td>
+      </tr>
+      <tr>
+        <td>Riverland Elementary School</td>
+        <td>D</td>
+        <td>38</td>
+        <td>96</td>
+      </tr>
+      <tr>
+        <td>West Hollywood Elementary School</td>
+        <td>C</td>
+        <td>48</td>
+        <td>92</td>
+      </tr>
+      <tr>
+        <td>South Broward High School</td>
+        <td>B</td>
+        <td>56</td>
+        <td>70</td>
+      </tr>
+      <tr>
+        <td>Pompano Beach High School</td>
+        <td>A</td>
+        <td>92</td>
+        <td>41</td>
+      </tr>
+      <tr>
+        <td>Wilton Manors Elementary School</td>
+        <td>B</td>
+        <td>56</td>
+        <td>75</td>
+      </tr>
+      <tr>
+        <td>Bennett Elementary School</td>
+        <td>C</td>
+        <td>49</td>
+        <td>86</td>
+      </tr>
+      <tr>
+        <td>Stranahan High School</td>
+        <td>C</td>
+        <td>53</td>
+        <td>83</td>
+      </tr>
+      <tr>
+        <td>Croissant Park Elementary School</td>
+        <td>C</td>
+        <td>47</td>
+        <td>87</td>
+      </tr>
+      <tr>
+        <td>Colbert Elementary School</td>
+        <td>D</td>
+        <td>33</td>
+        <td>92</td>
+      </tr>
+      <tr>
+        <td>Mcarthur High School</td>
+        <td>B</td>
+        <td>57</td>
+        <td>74</td>
+      </tr>
+      <tr>
+        <td>Sunrise Middle School</td>
+        <td>B</td>
+        <td>59</td>
+        <td>71</td>
+      </tr>
+      <tr>
+        <td>Dillard Elementary School</td>
+        <td>F</td>
+        <td>20</td>
+        <td>98</td>
+      </tr>
+      <tr>
+        <td>Walker Elementary School (Magnet)</td>
+        <td>F</td>
+        <td>16</td>
+        <td>96</td>
+      </tr>
+      <tr>
+        <td>Collins Elementary School</td>
+        <td>C</td>
+        <td>50</td>
+        <td>95</td>
+      </tr>
+      <tr>
+        <td>Bethune Mary M Elementary School</td>
+        <td>D</td>
+        <td>35</td>
+        <td>97</td>
+      </tr>
+      <tr>
+        <td>Attucks Middle School</td>
+        <td>C</td>
+        <td>48</td>
+        <td>86</td>
+      </tr>
+      <tr>
+        <td>Blanche Ely High School</td>
+        <td>B</td>
+        <td>54</td>
+        <td>82</td>
+      </tr>
+      <tr>
+        <td>Dillard 6-12</td>
+        <td>C</td>
+        <td>53</td>
+        <td>85</td>
+      </tr>
+      <tr>
+        <td>Deerfield Park Elementary School</td>
+        <td>D</td>
+        <td>34</td>
+        <td>95</td>
+      </tr>
+      <tr>
+        <td>Hallandale High School</td>
+        <td>B</td>
+        <td>54</td>
+        <td>85</td>
+      </tr>
+      <tr>
+        <td>Oakridge Elementary School</td>
+        <td>D</td>
+        <td>35</td>
+        <td>90</td>
+      </tr>
+      <tr>
+        <td>Olsen Middle School</td>
+        <td>C</td>
+        <td>44</td>
+        <td>79</td>
+      </tr>
+      <tr>
+        <td>Mcnicol Middle School</td>
+        <td>C</td>
+        <td>45</td>
+        <td>90</td>
+      </tr>
+      <tr>
+        <td>Harbordale Elementary School</td>
+        <td>A</td>
+        <td>69</td>
+        <td>42</td>
+      </tr>
+      <tr>
+        <td>Broward Estates Elementary School</td>
+        <td>F</td>
+        <td>21</td>
+        <td>96</td>
+      </tr>
+      <tr>
+        <td>Watkins Elementary School</td>
+        <td>D</td>
+        <td>35</td>
+        <td>95</td>
+      </tr>
+      <tr>
+        <td>North Andrews Gardens Elementary School</td>
+        <td>C</td>
+        <td>47</td>
+        <td>76</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div id="palm" class="table-container">
+  <table id="palm-table" class="table display responsive" cellspacing="0" width="100%">
+    <thead>
+      <tr>
+        <th>School Name</th>
+        <th>Preliminary Informational Baseline Grade 2015</th>
+        <th>Percent of Total Possible Points</th>
+        <th>Percent of Economically Disadvantaged Students</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Hidden Oaks Elementary School</td>
+        <td>B</td>
+        <td>58</td>
+        <td>61</td>
+      </tr>
+      <tr>
+        <td>Hope-Centennial Elementary School</td>
+        <td>C</td>
+        <td>44</td>
+        <td>97</td>
+      </tr>
+      <tr>
+        <td>L C Swain Middle School</td>
+        <td>C</td>
+        <td>42</td>
+        <td>88</td>
+      </tr>
+      <tr>
+        <td>Waters Edge Elementary School</td>
+        <td>A</td>
+        <td>85</td>
+        <td>16</td>
+      </tr>
+      <tr>
+        <td>Pine Jog Elementary School</td>
+        <td>A</td>
+        <td>68</td>
+        <td>73</td>
+      </tr>
+      <tr>
+        <td>Boca Raton Charter School</td>
+        <td>C</td>
+        <td>50</td>
+        <td>57</td>
+      </tr>
+      <tr>
+        <td>Everglades Elementary</td>
+        <td>A</td>
+        <td>70</td>
+        <td>44</td>
+      </tr>
+      <tr>
+        <td>Jupiter Elementary School</td>
+        <td>C</td>
+        <td>53</td>
+        <td>75</td>
+      </tr>
+      <tr>
+        <td>Jupiter High School</td>
+        <td>A</td>
+        <td>76</td>
+        <td>28</td>
+      </tr>
+      <tr>
+        <td>Allamanda Elementary School</td>
+        <td>A</td>
+        <td>72</td>
+        <td>58</td>
+      </tr>
+      <tr>
+        <td>Palm Beach Gardens Elementary School</td>
+        <td>A</td>
+        <td>67</td>
+        <td>50</td>
+      </tr>
+      <tr>
+        <td>Howell L. Watkins Middle School</td>
+        <td>C</td>
+        <td>45</td>
+        <td>87</td>
+      </tr>
+      <tr>
+        <td>The Conservatory School At North Palm Beach</td>
+        <td>B</td>
+        <td>59</td>
+        <td>79</td>
+      </tr>
+      <tr>
+        <td>Lake Park Elementary School</td>
+        <td>D</td>
+        <td>39</td>
+        <td>97</td>
+      </tr>
+      <tr>
+        <td>Suncoast Community High School</td>
+        <td>A</td>
+        <td>93</td>
+        <td>28</td>
+      </tr>
+      <tr>
+        <td>Washington Elementary Magnet School</td>
+        <td>D</td>
+        <td>33</td>
+        <td>94</td>
+      </tr>
+      <tr>
+        <td>John F. Kennedy Middle School</td>
+        <td>C</td>
+        <td>43</td>
+        <td>95</td>
+      </tr>
+      <tr>
+        <td>Lincoln Elementary School</td>
+        <td>F</td>
+        <td>31</td>
+        <td>96</td>
+      </tr>
+      <tr>
+        <td>Northmore Elementary School</td>
+        <td>F</td>
+        <td>26</td>
+        <td>96</td>
+      </tr>
+      <tr>
+        <td>Sunset Palms Elementary School</td>
+        <td>A</td>
+        <td>77</td>
+        <td>17</td>
+      </tr>
+      <tr>
+        <td>Northboro Elementary School</td>
+        <td>C</td>
+        <td>52</td>
+        <td>74</td>
+      </tr>
+      <tr>
+        <td>Roosevelt Middle School</td>
+        <td>C</td>
+        <td>43</td>
+        <td>85</td>
+      </tr>
+      <tr>
+        <td>Roosevelt Elementary School</td>
+        <td>F</td>
+        <td>30</td>
+        <td>97</td>
+      </tr>
+      <tr>
+        <td>Westward Elementary School</td>
+        <td>D</td>
+        <td>37</td>
+        <td>91</td>
+      </tr>
+      <tr>
+        <td>U. B. Kinsey/Palmview Elementary</td>
+        <td>C</td>
+        <td>46</td>
+        <td>86</td>
+      </tr>
+      <tr>
+        <td>Alexander W Dreyfoos Junior School Of The Arts</td>
+        <td>A</td>
+        <td>92</td>
+        <td>20</td>
+      </tr>
+      <tr>
+        <td>Palm Beach Public School</td>
+        <td>A</td>
+        <td>74</td>
+        <td>42</td>
+      </tr>
+      <tr>
+        <td>West Gate Elementary School</td>
+        <td>C</td>
+        <td>43</td>
+        <td>97</td>
+      </tr>
+      <tr>
+        <td>Belvedere Elementary School</td>
+        <td>C</td>
+        <td>43</td>
+        <td>90</td>
+      </tr>
+      <tr>
+        <td>Conniston Middle School</td>
+        <td>C</td>
+        <td>46</td>
+        <td>83</td>
+      </tr>
+      <tr>
+        <td>Palmetto Elementary School</td>
+        <td>C</td>
+        <td>44</td>
+        <td>94</td>
+      </tr>
+      <tr>
+        <td>South Olive Elementary School</td>
+        <td>A</td>
+        <td>78</td>
+        <td>57</td>
+      </tr>
+      <tr>
+        <td>Forest Hill Community High School</td>
+        <td>C</td>
+        <td>49</td>
+        <td>79</td>
+      </tr>
+      <tr>
+        <td>Meadow Park Elementary School</td>
+        <td>B</td>
+        <td>61</td>
+        <td>76</td>
+      </tr>
+      <tr>
+        <td>Berkshire Elementary School</td>
+        <td>B</td>
+        <td>56</td>
+        <td>82</td>
+      </tr>
+      <tr>
+        <td>Palm Springs Middle School</td>
+        <td>C</td>
+        <td>53</td>
+        <td>83</td>
+      </tr>
+      <tr>
+        <td>Forest Hill Elementary School</td>
+        <td>C</td>
+        <td>51</td>
+        <td>89</td>
+      </tr>
+      <tr>
+        <td>Greenacres Elementary School</td>
+        <td>C</td>
+        <td>42</td>
+        <td>93</td>
+      </tr>
+      <tr>
+        <td>Daystar Academy Of Excellence Charter School</td>
+        <td>F</td>
+        <td>6</td>
+        <td>99</td>
+      </tr>
+      <tr>
+        <td>Palm Springs Elementary School</td>
+        <td>C</td>
+        <td>49</td>
+        <td>92</td>
+      </tr>
+      <tr>
+        <td>Marsh Pointe Elementary</td>
+        <td>A</td>
+        <td>79</td>
+        <td>17</td>
+      </tr>
+      <tr>
+        <td>Academy For Positive Learning</td>
+        <td>A</td>
+        <td>69</td>
+        <td>76</td>
+      </tr>
+      <tr>
+        <td>Highland Elementary School</td>
+        <td>D</td>
+        <td>36</td>
+        <td>96</td>
+      </tr>
+      <tr>
+        <td>North Grade Elementary School</td>
+        <td>C</td>
+        <td>53</td>
+        <td>81</td>
+      </tr>
+      <tr>
+        <td>Lake Worth High School</td>
+        <td>C</td>
+        <td>49</td>
+        <td>80</td>
+      </tr>
+      <tr>
+        <td>Barton Elementary School</td>
+        <td>D</td>
+        <td>35</td>
+        <td>96</td>
+      </tr>
+      <tr>
+        <td>Lantana Elementary School</td>
+        <td>C</td>
+        <td>48</td>
+        <td>93</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div id="dade" class="table-container">
+  <table id="dade-table" class="table display responsive" cellspacing="0" width="100%">
+    <thead>
+      <tr>
+        <th>School Name</th>
+        <th>Preliminary Informational Baseline Grade 2015</th>
+        <th>Percent of Total Possible Points</th>
+        <th>Percent of Economically Disadvantaged Students</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Academir Charter School Middle</td>
+        <td>C</td>
+        <td>48</td>
+        <td>61</td>
+      </tr>
+      <tr>
+        <td>Academir Charter School West</td>
+        <td>A</td>
+        <td>73</td>
+        <td>57</td>
+      </tr>
+      <tr>
+        <td>Academy For International Education Charter School</td>
+        <td>A</td>
+        <td>62</td>
+        <td>59</td>
+      </tr>
+      <tr>
+        <td>Academy Of Arts &#38; Minds</td>
+        <td>C</td>
+        <td>52</td>
+        <td>11</td>
+      </tr>
+      <tr>
+        <td>Ada Merritt K-8 Center</td>
+        <td>A</td>
+        <td>85</td>
+        <td>31</td>
+      </tr>
+      <tr>
+        <td>Advantage Academy Santa Fe</td>
+        <td>A</td>
+        <td>62</td>
+        <td>59</td>
+      </tr>
+      <tr>
+        <td>Agenoria S Paschal/Olinda Elementary School</td>
+        <td>C</td>
+        <td>45</td>
+        <td>94</td>
+      </tr>
+      <tr>
+        <td>Air Base K-8 Center For International Education</td>
+        <td>A</td>
+        <td>75</td>
+        <td>63</td>
+      </tr>
+      <tr>
+        <td>Allapattah Middle School</td>
+        <td>D</td>
+        <td>35</td>
+        <td>85</td>
+      </tr>
+      <tr>
+        <td>Alonzo And Tracy Mourning Senior High Biscayne Bay Campus</td>
+        <td>A</td>
+        <td>69</td>
+        <td>61</td>
+      </tr>
+      <tr>
+        <td>Alpha Charter Of Excellence</td>
+        <td>F</td>
+        <td>29</td>
+        <td>80</td>
+      </tr>
+      <tr>
+        <td>Amelia Earhart Elementary School</td>
+        <td>C</td>
+        <td>52</td>
+        <td>92</td>
+      </tr>
+      <tr>
+        <td>American Senior High School</td>
+        <td>B</td>
+        <td>57</td>
+        <td>82</td>
+      </tr>
+      <tr>
+        <td>Andover Middle School</td>
+        <td>D</td>
+        <td>40</td>
+        <td>89</td>
+      </tr>
+      <tr>
+        <td>Archcreek Elementary School</td>
+        <td>C</td>
+        <td>49</td>
+        <td>97</td>
+      </tr>
+      <tr>
+        <td>Archimedean Academy</td>
+        <td>A</td>
+        <td>92</td>
+        <td>45</td>
+      </tr>
+      <tr>
+        <td>Archimedean Middle Conservatory</td>
+        <td>A</td>
+        <td>93</td>
+        <td>53</td>
+      </tr>
+      <tr>
+        <td>Archimedean Upper Conservatory</td>
+        <td>A</td>
+        <td>92</td>
+        <td>45</td>
+      </tr>
+      <tr>
+        <td>Arcola Lake Elementary School</td>
+        <td>F</td>
+        <td>29</td>
+        <td>97</td>
+      </tr>
+      <tr>
+        <td>Arthur And Polly Mays Conservatory Of The Arts</td>
+        <td>C</td>
+        <td>45</td>
+        <td>85</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<script>
+  $(document).ready(function () {
+    $('.table').dataTable({
+      "pagingType": "simple_numbers",
+      "iDisplayLength": 10,
+      "order": [
+        [1, "asc"]
+      ],
+      "columns": [{
+          "width": "25%",
+          "targets": 0
+        },
+        {
+          "width": "25%",
+          "targets": 1
+        },
+        {
+          "width": "25%",
+          "targets": 2
+        },
+        {
+          "width": "25%",
+          "targets": 3
+        }
+      ]
+    });
+  });
+
+
+  $('#palm, #dade').hide();
+  $("#button-holder button").click(function () {
+    var id = $(this).attr("data-value");
+    $(this).addClass('active');
+    $(this).siblings('button').removeClass('active');
+    $("#" + id).fadeIn();
+    $("#" + id).siblings(".table-container").hide();
+  });
+
+</script>

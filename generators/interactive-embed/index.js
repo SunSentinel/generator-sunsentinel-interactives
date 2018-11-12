@@ -28,8 +28,12 @@ module.exports = class extends Generator {
             value: 'mapEmbed'
           },
           {
-            name: 'Sortable table',
+            name: 'Simple Sortable table',
             value: 'tableEmbed'
+          },
+          {
+            name: 'Sortable table with Google Spreadsheet',
+            value: 'googleTableEmbed'
           },
           {
             name: 'Other graphic',
@@ -58,7 +62,12 @@ module.exports = class extends Generator {
       );
     } else if (this.embedType === 'tableEmbed') {
       this.fs.copy(
-        this.templatePath('table.html'),
+        this.templatePath('simple-table.html'),
+        this.destinationPath('./src/index.html')
+      );
+    } else if (this.embedType === 'googleTableEmbed') {
+      this.fs.copy(
+        this.templatePath('table-with-googlespreadsheet.html'),
         this.destinationPath('./src/index.html')
       );
     } else if (this.embedType === 'otherEmbed') {

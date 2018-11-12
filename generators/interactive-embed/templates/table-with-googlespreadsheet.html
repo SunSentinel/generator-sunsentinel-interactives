@@ -1,0 +1,259 @@
+<head>
+<meta content="Descriptions about this table." property="og:description"><!--Update this-->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jq-3.3.1/dt-1.10.18/r-2.2.2/datatables.min.css"/>
+<script type="text/javascript" src="https://cdn.datatables.net/v/dt/jq-3.3.1/dt-1.10.18/r-2.2.2/datatables.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js'></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.12/handlebars.min.js"></script>
+ <style>
+ table.dataTable{
+ font-size:0.8em;
+ font-family:Arial;
+ padding-top:15px;
+ }
+
+ /*Custom table style*/
+ table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child:before, table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>th:first-child:before{
+ top: auto;
+ border: 0;
+ box-shadow: none;
+ background-color:  #005980;
+ line-height:auto;
+ }
+ table.dataTable.stripe tbody tr.odd, table.dataTable.display tbody tr.odd{
+ background-color:#fff;
+ }
+ table.dataTable.hover tbody tr.even, table.dataTable.display tbody tr.even{
+ background-color:#fff;
+ }
+ table.dataTable.hover tbody tr:hover, table.dataTable.display tbody tr:hover{
+ background-color:#fff;
+ }
+
+ table.dataTable.display tbody tr.odd>.sorting_1, table.dataTable.order-column.stripe tbody tr.odd>.sorting_1{
+ background-color:#fff;
+ }
+
+ table.dataTable.display tbody tr.even>.sorting_1, table.dataTable.order-column.stripe tbody tr.even>.sorting_1{
+ background-color:#fff;
+ }
+ table.dataTable thead th{
+    color: #005980;
+    background-color: #f1f1f1;
+ }
+ .dataTables_wrapper .dataTables_paginate .paginate_button.current{
+     background:transparent;
+ }
+ .dataTables_wrapper .dataTables_paginate .paginate_button{
+    padding:0.2em 0.5em;
+ }
+ .dataTables_wrapper .dataTables_length{
+     display:none;
+ }
+ .dataTables_wrapper .dataTables_filter{
+     float:none;
+     text-align:center;
+     font-size:14px;
+ }
+
+.dataTables_wrapper .dataTables_paginate{
+    font-size:13px;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.dataTables_wrapper .dataTables_info{
+  font-size:13px;
+    font-family:Arial, Helvetica, sans-serif;
+    color:rgb(100, 100, 100);
+}
+
+table.dataTable a{
+    color:#4492e0;
+    text-decoration:none;
+}
+table.dataTable a:hover{ 
+    color:#9dd1f6;
+}
+
+table.dataTable a:visited{
+    color:#005980;
+}
+
+/* Dropdown menu style is optional if you don't need the dropdown */
+.dropdown{
+ text-align:center;
+ margin:15px auto;
+ }
+.dropdown-menu {
+ left: 50%;
+ right: auto;
+ text-align: center;
+ transform: translate(-50%, 0);
+ border-radius:0;
+ padding:0;
+ }
+
+ .dropdown-menu a{
+   cursor:pointer;
+   border-left:4px solid;
+   font-size:14px;
+ }
+ #dropdownMenuButton{
+     font-size:14px;
+     cursor:pointer;
+ }
+</style>
+</head>
+
+<!-- Dropdown menu is optional -->
+
+<div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" id="dropdownMenuButton" type="button">All topics</button></span>
+    <div aria-labelledby="dropdownMenuButton" class="dropdown-menu">
+
+                <a alt=" " class="dropdown-item" style="border-left-color:#8A8A8A">All topics</a>
+
+                <a alt="community news" class="dropdown-item">Community News</a>
+
+                <a alt="el sentinel" class="dropdown-item">El Sentinel</a>
+
+                <a alt="Growth / Business" class="dropdown-item">Growth / Business</a>
+
+                <a alt="Interactives / Data" class="dropdown-item">Interactives / Data</a>
+
+                <a alt="investigations" class="dropdown-item">Investigations</a>
+
+                <a alt="jewish journal" class="dropdown-item">Jewish Journal</a>
+
+                <a alt="Lifestyle / Entertainment" class="dropdown-item">Lifestyle / Entertainment</a>
+
+                <a alt="local news" class="dropdown-item">Local News</a>
+
+                <a alt="opinion" class="dropdown-item">Opinion</a>
+
+                <a alt="magazines" class="dropdown-item">Magazines</a>
+
+                <a alt="Photo / Video" class="dropdown-item">Photo / Video</a>
+
+                <a alt="politics" class="dropdown-item">Politics</a>
+
+                <a alt="print desk" class="dropdown-item">Print Desk</a>
+
+                <a alt="south florida parenting" class="dropdown-item">South Florida Parenting</a>
+
+                <a alt="sports" class="dropdown-item">Sports</a>
+
+    </div>
+</div>
+
+          <div id="table-container">
+            <table id="directorytable" cellspacing="0" class="display responsive" width="100%"> 
+                <thead>
+                    <tr>
+                        <th>Topic</th>
+                        <th>Employee Name</th>
+                        <th>Job Title</th>
+                        <th>Beat</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+          </div>
+    
+
+
+<script id="directory-template" type="text/x-handlebars-template">
+        {{#each elements}}
+            <tr>
+                <td data-title="Topic:">{{ topic }}</td>
+                <td data-title="Employee Name:">{{ employee_name }}</td>
+                <td data-title="Job Title:">{{ job_title }}</td>
+                <td data-title="Beat:">{{ beat }}</td>
+                <td data-title="Email:"><a href="mailto:{{email}}">{{ email }}</a></td>
+                <td data-title="Phone:">{{ phone }}</td>
+            </tr>
+        {{/each}}
+    </script>
+
+
+<script>
+var google_docs_one = 'https://docs.google.com/spreadsheet/pub?hl=en_US&hl=en_US&key=';
+var spreadsheet_key = '1GZz5kRzi8zE0vYiuwtSLt0dqw2GY4af2PVONoL49gw8';
+var google_docs_two = '&output=html';
+var templateSettings = [
+    {
+        "templatesource": "#directory-template",
+        "templatehtml": "#directorytable tbody",
+        "sheet": "Sheet1"
+    }
+];
+
+function loadDataTable() {
+    $('#directorytable').dataTable({
+        "bAutoWidth": false,
+        "oLanguage": {
+            "sLengthMenu": "_MENU_ records per page"
+        },
+        "iDisplayLength": 10,
+        "aaSorting": [[ 0, "asc" ]],
+
+        "aoColumns": [
+           {"sWidth": "10%"},
+           {"sWidth": "10%"},
+           {"sWidth": "20%"},
+           {"sWidth": "30%"},
+           {"sWidth": "15%"},
+           {"sWidth": "15%"},
+
+        ],
+
+        "initComplete": function(settings, json) {
+            $('#directorytable').show();
+        }
+    });
+
+};
+
+function loadToDOM(tabletop_data, tabletop) {
+    _.each(templateSettings, function(element, num_templates) {
+    	var template_html = element['templatehtml'];
+    	var source = $(element["templatesource"] + "").html();
+    	var sheet = element["sheet"];
+        var handlebarscompile = Handlebars.compile(source);
+
+		$(template_html).append(handlebarscompile( tabletop.sheets(sheet) ));
+    }, this);
+    
+    loadDataTable();
+}
+
+function initializeTabletopObject(){
+	Tabletop.init({
+    	key: google_docs_one + spreadsheet_key + google_docs_two,
+    	callback: loadToDOM,
+    	simpleSheet: false,
+    	debug: false
+    });
+}
+initializeTabletopObject();
+
+
+/* Optional dropdown function*/
+$('.dropdown-toggle').dropdown();
+var e = jQuery.Event("keyup");
+e.which = 13;
+jQuery(document).ready(function($){
+$('.dropdpwn a').on('click', function(){
+$("#dropdownMenuButton").text($(this).text()).append(' <span class="caret">');
+var mobiletext = $(this).attr("alt");
+$('.dataTables_wrapper .dataTables_filter input').val(mobiletext);
+$('input').trigger('keyup',e);
+});
+});
+</script>
