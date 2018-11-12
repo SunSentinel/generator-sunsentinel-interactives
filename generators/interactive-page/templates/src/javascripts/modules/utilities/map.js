@@ -1,4 +1,12 @@
+import promise from 'es6-promise';
+import fetch from 'isomorphic-fetch';
+import 'babel-polyfill';
 import L from 'leaflet';
+import {
+  GeoSearchControl,
+  GoogleProvider
+} from 'leaflet-geosearch';
+
 export default function doMap() {
 
 //SET UP BASIC MAP
@@ -10,13 +18,19 @@ var baseMap = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y
 });
 
 var map = L.map('map', {
-  center: [26.122173, -80.150485],
+  center: mapCenter,
   zoom: 15,
-  maxZoom: 17,
-  minZoom: 12,
+  // maxZoom: 17,
+  // minZoom: 12,
   zoomControl: false,
   layers: [baseMap]
 });
+
+var pathStyle = {
+  fillOpacity: 0.1,
+  color: "#333",
+  weight: 3
+};
 
 //DO WHATEVER YOU NEED HERE TO MAP YOUR DATA
 

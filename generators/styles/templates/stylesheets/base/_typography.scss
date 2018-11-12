@@ -1,0 +1,134 @@
+@mixin font-setting($size, $height){
+    font-size:$size;
+    line-height:$height;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  color: $headline-color;
+  font-family: $sans-serif;
+  font-weight: $semibold;
+  max-width:600px;
+  padding-left:1%;
+  padding-right:1%;
+}
+
+h1{
+  @include font-setting(48px,52px);
+  font-family:$serif;
+  margin:1em auto;
+  font-weight:$bold;
+
+  @include tablet{
+      @include font-setting(38px,44px);
+  }
+
+  @include mobile{
+    @include font-setting(30px,38px);
+  }
+}
+
+h2{
+  @include font-setting(30px,38px);
+  margin:2em auto 1em;
+
+  @include mobile{
+    @include font-setting(24px, 30px);
+  }
+}
+
+h3{
+    @include font-setting(24px,30px);
+    margin:2em auto 1em;
+  
+    @include mobile{
+      @include font-setting(18px, 24px);
+    }
+  }
+
+h4{
+    @include font-setting(18px,24px);
+    margin:2em auto 1em;
+  
+    @include mobile{
+      @include font-setting(16px, 22px);
+    }
+  }
+
+h5{
+    @include font-setting(16px,22px);
+    margin:2em auto 1em;
+  
+    @include mobile{
+      @include font-setting(14px, 20px);
+    }
+  }
+
+  h6{
+    @include font-setting(14px,22px);
+    margin:2em auto 1em;
+  
+    @include mobile{
+      @include font-setting(12px, 18px);
+    }
+  }
+
+p{
+   color:$text-color;
+   font-family:$serif;
+   @include font-setting(18px, 30px);
+   margin:0 auto 1.6em;
+   max-width:600px;
+
+   &:last-of-type {
+    margin-bottom: 0;
+  }
+  @include mobile{
+    @include font-setting(16px, 26px);
+  }
+  }
+
+a {
+    color: $red;
+    text-decoration: none;
+  }
+  
+a:hover, a:active, a:focus {
+    color: $brightred;
+    text-decoration: none;
+}
+  
+a:visited {
+    color:$sunrust;
+    text-decoration: none;
+}
+
+.semibold{
+    font-weight:600;
+}
+.bold {
+  font-weight: 700;
+}
+
+.dropcap {
+    color: $black;
+    float: left;
+    @include font-setting(7rem, 6rem);
+    margin: 0 1rem 0 0;
+    padding-top: 0;
+
+    @include mobile{
+      @include font-setting(5rem,4rem);
+    }
+  }
+
+  .caption {
+    color: $greymed;
+    font-family: $sans-serif;
+    @include font-setting(12px, 16px);
+    max-width: 600px;
+    padding: 1em 0;
+    width: 100%;
+  }
+
+
+  

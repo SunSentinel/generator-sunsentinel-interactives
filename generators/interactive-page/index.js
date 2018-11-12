@@ -66,6 +66,7 @@ module.exports = class extends Generator {
     this.fs.copy(this.templatePath('gulpfile.js'), this.destinationPath('./gulpfile.js'));
     this.fs.copy(this.templatePath('extras'), this.destinationPath('./extras'));
     this.fs.copy(this.templatePath('src/static'), this.destinationPath('./src/static'));
+    this.fs.copy(this.templatePath('src/images'), this.destinationPath('./src/images'));
     this.fs.copy(
       this.templatePath('src/javascripts'),
       this.destinationPath('./src/javascripts')

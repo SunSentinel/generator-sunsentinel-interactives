@@ -10,15 +10,15 @@
 		<h2>{{ intro_text }}</h2>
 
 		<div class="topper--byline">
-			<p>By
+			<span>By
 			{% for person in reporters %}
 				<a href="{{ person.url }}">
 					{{ person.name }}
 				</a>
 				{{ person.operator }}
 			{% endfor %}
-			</p>
-			<p>{{ pub_date }}</p>
+			</span>
+			<time>{{ pub_date }}</time>
 		</div>
 	</div>
 </div>

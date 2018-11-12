@@ -23,13 +23,14 @@ export default function doNavigation() {
   });
 
   $(window).on('resize', function(event) {
+    var windowWidth = $(window).width();
 
-    if (navigator.userAgent.indexOf('Safari') != -1 || navigator.userAgent.indexOf('Firefox') != -1) {
-      var windowWidth = $(window).width();
-    } else {
-      var windowWidth = $(window).width() + 15;
-    }
-    if (windowWidth >= 1000) {
+    // if (navigator.userAgent.indexOf('Safari') != -1 || navigator.userAgent.indexOf('Firefox') != -1) {
+    //   var windowWidth = $(window).width();
+    // } else {
+    //   var windowWidth = $(window).width() + 15;
+    // }
+    if (windowWidth >= 768) {
       var menuVisible = true;
       $('.nav-list').css({
         'display': 'block'
@@ -42,7 +43,7 @@ export default function doNavigation() {
       });
       return;
 
-    } else if (windowWidth < 1000) {
+    } else if (windowWidth < 768) {
 
 
       var menuVisible = false;

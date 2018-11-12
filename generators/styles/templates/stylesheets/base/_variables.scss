@@ -1,29 +1,51 @@
 // FONTS
-$heading-sans-serif: 'Source Sans Pro', Arial,sans-serif;
-$heading-serif: 'Source Serif Pro', Georgia, 'Droid Serif', serif;
-$body-serif: 'Source Serif Pro', Georgia, 'Droid Serif', serif;
+$sans-serif: 'open-sans', Arial,sans-serif;
+$serif: 'pt-serif', Georgia, 'Droid Serif', serif;
+$semibold: 600;
+$bold: 700;
 
-//COLORS
-$black: #000;
-$charcoal: #252525;
+/*NEW BRAND COLOR NAMES*/
+//Font colors
+$black: #000000;
+$greydk:#333333;
+$greymed:#999999;
+$grey:#cccccc;
+$greylt:#f1f1f1;
 $white: #fff;
-
-$text: #333;
-
-$gray: #707070;
-$grid-border: #cecdc6;
-$ad: #dcdcdc;
-
-// LINKS
-$ss-lightred: #e03333;
-$ss-red: #d80000;
-$ss-maroon: #ad0000;
-$ss-darkred: #78171a;
+// Links
+$red: #d80000;
+$brightred: #ff0000;
+$sunrust: #761113;
+//Other brand colors
+$dusklt: #d94e54;
+$duskdk: #a74229;
+$palepink: #ffc9bb;
+$lilac: #c26f94;
+$violet: #632c6a;
+$yellow:#fcd13e;
+$orange:#f7a430;
+$sand:#eedc96; 
+$gold:#cfb53c;
+$golddk:#a87a03;
+$cloud:#9dd1f6;
+$sky: #4492e0;
+$aqua:#50accd;
+$pacific: #005980;
+$navy: #024584;
+$palm: #a0c42e;
+$sage: #817b0d;
+$fir:#2f480f;
 
 // SOCIAL
-$facebook: #23408f;
-$twitter: #50abda;
-$email: #999;
+$facebook: #3b5998;
+$twitter: #55acee;
+$email: #999999;
 
 
-
+//VIARIABLES
+$text-color:$black;
+$headline-color:$black;
+$caption-color:$greydk;
+$byline-color:$greydk;
+$timestamp-color:$greymed;
+$topictag-color:$greydk;
