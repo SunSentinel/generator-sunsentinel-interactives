@@ -2,7 +2,7 @@ var path = require('path')
 var rename = require('gulp-rename')
 var gulp         = require('gulp')
 var awspublish = require('gulp-awspublish')
-
+var date = new Date();
 
 var deployTask = function() {
 
@@ -29,7 +29,7 @@ var deployTask = function() {
     return gulp.src('./public/**')
       .pipe(
         rename(function(path) {
-          path.dirname = projectName + "/" + path.dirname;
+          path.dirname = projectName + "/" + str(date.getFullYear()) + "/" + path.dirname;
         })
       )
       // publisher will add Content-Length, Content-Type and headers specified above

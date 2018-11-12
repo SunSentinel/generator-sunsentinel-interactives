@@ -80,7 +80,7 @@ module.exports = class extends Generator {
     );
     this.fs.copy(
       this.templatePath('src/html/partials'),
-      this.destinationPath('./src/html/patrials')
+      this.destinationPath('./src/html/partials')
     );
 
     // Interactive-specific imports

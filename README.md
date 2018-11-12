@@ -18,7 +18,8 @@ mkdir my-project
 cd my-project
 ```
 
-Finally, run the generator and follow the prompts.
+Finally, run the generator and follow the prompts with:
+
 
 ```bash
 yo sunsentinel-interactives
@@ -26,9 +27,13 @@ yo sunsentinel-interactives
 
 The generator will allow you to pick the type of interactive project you want to create and then generates the boilerplate files in your working directory.
 
+**Available templates**
++ Full-page presentation
++ Full-page map
++ Embeddable graphic
 
 ## Developing the generator
-To work on the generator, clone the repo and symlink to the package.
+To work on the generator and change/add/remove templates, clone the repo and symlink to the package.
  ```bash
 git clone git@github.com:SunSentinel/generator-sunsentinel-interactives.git
 cd generator-sunsentinel-interactives
