@@ -29,7 +29,7 @@ var deployTask = function() {
     return gulp.src('./public/**')
       .pipe(
         rename(function(path) {
-          path.dirname = projectName + "/" + str(date.getFullYear()) + "/" + path.dirname;
+          path.dirname = date.getFullYear().toString() + "/" + projectName + "/" + path.dirname;
         })
       )
       // publisher will add Content-Length, Content-Type and headers specified above
